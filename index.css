@@ -194,3 +194,428 @@ body {
   padding: 20px 30px;
   border-radius: 8px;
   pointer-events: none; /* Sørger for at masken ikke "hakker" når musen treffer teksten */
+.portfolio {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Frostet overlay som dukker opp ved hover */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0px); /* Starter uten blur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+  backdrop-filter: blur(10px); /* "Fryser" bildet når man hovers */
+  background: rgba(56, 189, 248, 0.1); /* Svakt isblått skjær */
+}
+
+.project-card:hover img {
+  transform: scale(1.1); /* Bildet zoomer litt inn bak glasset */
+}
+
+.overlay-content {
+  text-align: center;
+  color: #0f172a;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .overlay-content {
+  transform: translateY(0);
+}
+
+.overlay-content span {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+.overlay-content h3 {
+  font-size: 28px;
+  margin: 10px 0 20px;
+}
+
+.view-project {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 2px solid #0f172a;
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.view-project:hover {
+  background: #0f172a;
+  color: white;
+}
+.contact {
+  padding: 100px 0;
+  background-color: #0f172a; /* Dyp midnattsblå */
+  color: white;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-info h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.contact-details {
+  margin-top: 40px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.detail-item .icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+/* Skjema-styling */
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #38bdf8;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #7dd3fc;
+  transform: translateY(-3px);
+}
+
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #0f172a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #64748b;
+  font-size: 14px;
+}
+.about {
+  padding: 120px 0;
+  background-color: #f8fafc;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-text .subtitle {
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.about-text h2 {
+  font-size: 42px;
+  margin: 20px 0;
+  color: #0f172a;
+}
+
+.about-text p {
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Statistikk-rad */
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* Team-medlemmer */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.member-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 20px; /* Eller 50% for helt runde bilder */
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 5px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.1);
+}
+
+.team-member h4 {
+  font-size: 18px;
+  color: #0f172a;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Responsivitet for mobil */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+.pricing {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.price-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Gjør den midterste pakken spesiell */
+.price-card.featured {
+  border: 2px solid #38bdf8;
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.1);
+}
+
+.price-card.featured:hover {
+  transform: scale(1.08) translateY(-10px);
+}
+
+.popular-tag {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #38bdf8;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-header h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 30px;
+}
+
+.price span {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.features li {
+  margin-bottom: 12px;
+  color: #475569;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.features li::before {
+  content: "✓";
+  color: #38bdf8;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn-outline {
+  display: block;
+  padding: 12px;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #38bdf8;
+  color: white;
+}
+html {
+  scroll-behavior: smooth; /* Gjør at hoppingen blir en glidende bevegelse */
+  scroll-padding-top: 80px; /* Samme høyde som headeren din */
+}
