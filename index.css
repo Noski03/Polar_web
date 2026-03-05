@@ -619,3 +619,29 @@ html {
   scroll-behavior: smooth; /* Gjør at hoppingen blir en glidende bevegelse */
   scroll-padding-top: 80px; /* Samme høyde som headeren din */
 }
+/* Mobil-tilpasning for den interaktive kloden */
+@media (max-width: 650px) {
+  .reveal-container {
+    width: 90vw; /* Bruker 90% av skjermbredden */
+    height: 90vw; /* Beholder sirkelform */
+    cursor: default; /* Vis vanlig touch-interaksjon */
+  }
+
+  .hero h1 {
+    font-size: 32px; /* Mindre tekst på mobil */
+  }
+
+  /* Juster størrelsen på "avslørings-sirkelen" for mindre skjermer */
+  .mask-layer {
+    --rx: 100px !important;
+    --ry: 100px !important;
+  }
+}
+
+/* Hindre at man kan "dra" i bildene på mobil (ghosting) */
+.base-layer,
+.reveal-img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
